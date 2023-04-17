@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cats</title>
+</head>
+<body>
+<button type="button" id="btn">List!</button>
+</body>
+
+<script>
+var btn = document.getElementById('btn')
+btn.addEventListener('click', function(){
+   {% for item in data -%}
+     var x = document.createElement("P");
+     var t = document.createTextNode("{{ item.cat_name }}");
+     x.appendChild(t);
+     document.body.appendChild(x);
+   {%- endfor %}
+});
+</script>
+</html>
